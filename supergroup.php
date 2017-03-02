@@ -49,13 +49,13 @@ function addadmin($update, $MadelineProto, $msg)
                     }
                     if (isset($userid)) {
                         $mention = html_mention($username, $userid);
-                        $channelRoleModerator = [
-                            '_' => 'channelRoleModerator',
+                        $channelRoleEditor = [
+                            '_' => 'channelRoleEditor',
                         ];
                         try {
                             $editadmin = $MadelineProto->channels->editAdmin(
                                 ['channel' => $peer, 'user_id' => $userid,
-                                'role' => $channelRoleModerator ]
+                                'role' => $channelRoleEditor ]
                             );
                             $str = $responses['addadmin']['success'];
                             $repl = array(
